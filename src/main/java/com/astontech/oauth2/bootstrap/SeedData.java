@@ -58,6 +58,26 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent> {
         member.setAccounts(accountList);
         memberRepository.save(member);
 
+        List<Account> accountList2 = new ArrayList<>();
+        Account account4 = new Account();
+        account1.setAccountId(11111);
+        Account account5 = new Account();
+        account2.setAccountId(22222);
+        Account account6 = new Account();
+        account3.setAccountId(33333);
+
+
+        accountList2.add(account4);
+        accountList2.add(account5);
+        accountList2.add(account6);
+
+        Member member2 = new Member();
+        member2.setFirstName("Nikola");
+        member2.setLastName("Tesla");
+        member2.setMessage("The scientists of today think deeply instead of clearly. One must be sane to think clearly, but one can think deeply and be quite insane");
+
+        member2.setAccounts(accountList2);
+        memberRepository.save(member2);
 
     }
 

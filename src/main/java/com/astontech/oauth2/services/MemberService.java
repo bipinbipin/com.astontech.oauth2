@@ -19,4 +19,8 @@ public class MemberService {
     public Iterable<Member> getAllMembers() {
         return memberRepository.findAll();
     }
+
+    public Member getOneMemberById(Integer id) {
+        return memberRepository.findOne(id);
+    }
 }

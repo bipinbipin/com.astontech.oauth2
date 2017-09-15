@@ -1,9 +1,8 @@
 package com.astontech.oauth2.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,6 +10,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@ToString
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class Member {
