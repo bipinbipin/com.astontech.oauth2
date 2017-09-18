@@ -1,5 +1,6 @@
 package com.astontech.oauth2.domain;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.*;
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j;

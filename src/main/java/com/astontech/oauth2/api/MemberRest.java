@@ -33,21 +33,16 @@ public class MemberRest {
     //region UNSECURED
 
     @GetMapping("/test")
-    public Iterable<Member> getAllTest(HttpServletResponse response) {
-        addHeaders(response);
+    public Iterable<Member> getAllTest() {
         return memberService.getAllMembers();
     }
 
     @GetMapping("/test/{id}")
-    public Member getByIdTest(@PathVariable Integer id, HttpServletResponse response) {
-        addHeaders(response);
+    public Member getByIdTest(@PathVariable Integer id) {
         return memberService.getOneMemberById(id);
     }
 
     // endregion
 
-    public void addHeaders(HttpServletResponse response) {
-        response.setHeader("Company", "Aston");
-    }
 }
 
