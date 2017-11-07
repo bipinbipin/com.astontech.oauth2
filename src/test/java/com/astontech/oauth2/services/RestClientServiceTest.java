@@ -61,7 +61,7 @@ public class RestClientServiceTest {
         JsonNode root = mapper.readTree(response.getBody());
 
         // MAP JSON TO JAVA OBJECT
-        Member member0 = mapper.treeToValue(root, Member.class);
+        Member member0 = mapper.treeToValue(root.get("collection"), Member.class);
         System.out.println(member0.toString());
 
         // ALTERNATIVELY PULL FIELDS BY NAME
