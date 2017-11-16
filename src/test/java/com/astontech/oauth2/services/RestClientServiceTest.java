@@ -48,9 +48,11 @@ public class RestClientServiceTest {
 
         // HTTP HEADERS
         HttpHeaders httpHeaders = response.getHeaders();
+
         Map<String, String> headerMap = httpHeaders.toSingleValueMap();
         headerMap.forEach((k,v) -> {
             System.out.println(k + ": " + v);
+            // check value of "Company"
         });
 //        response.getHeaders().toSingleValueMap().forEach((k,v) -> System.out.println(k + ": " + v));
 
@@ -61,7 +63,7 @@ public class RestClientServiceTest {
         JsonNode root = mapper.readTree(response.getBody());
 
         // MAP JSON TO JAVA OBJECT
-        Member member0 = mapper.treeToValue(root.get("collection"), Member.class);
+        Member member0 = mapper.treeToValue(root, Member.class);
         System.out.println(member0.toString());
 
         // ALTERNATIVELY PULL FIELDS BY NAME

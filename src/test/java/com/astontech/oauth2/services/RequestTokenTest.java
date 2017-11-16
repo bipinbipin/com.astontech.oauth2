@@ -16,8 +16,9 @@ public class RequestTokenTest {
 
     @Test
     public void requestToken() {
-        System.out.println(requestTokenService.requestToken());
-
+        System.out.println("********************************\n"
+                            + requestTokenService.requestToken()
+                            + "\n********************************");
     }
 
 }

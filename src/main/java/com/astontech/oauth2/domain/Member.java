@@ -9,10 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Member {

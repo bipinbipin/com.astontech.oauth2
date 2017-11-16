@@ -2,6 +2,7 @@ package com.astontech.oauth2.api.filters;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,7 +20,10 @@ public class CorsFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         response.addHeader("Access-Control-Allow-Origin", "*");
+//        Cookie cookie = new Cookie("Name", "MyCookie");
+//        cookie.s
 
+        response.addCookie();
         if (request.getHeader("Access-Control-Request-Method") != null
                 && "OPTIONS".equals(request.getMethod())) {
             // CORS "pre-flight" request

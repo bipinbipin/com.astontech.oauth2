@@ -50,7 +50,9 @@ public class RequestTokenService {
     private String grant_type;
 
     public OAuthResponse requestToken() {
+        //todo: check for a valid token before requesting a new one.
         return restTemplate.postForObject(token_request_url, createHttpEntity(), OAuthResponse.class);
+        //todo: store token returned by Auth server along with Expires time
     }
 
     private HttpEntity<MultiValueMap<String, String>> createHttpEntity() {
@@ -73,8 +75,8 @@ public class RequestTokenService {
         String encodedCreds = Base64.getEncoder().encodeToString(creds.getBytes());
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-//        headers.add("Content-Type", "application/x-www-form-urlencoded");
+//        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        headers.add("Content-Type", "application/x-www-form-urlencoded");
         headers.add("Authorization", "Basic " + encodedCreds);
 
         return headers;

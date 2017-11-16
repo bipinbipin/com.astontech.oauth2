@@ -41,7 +41,7 @@ public class RestClientService {
     //endregion
 
     public ResponseEntity<String> getSingleMemberSecured() {
-        HttpEntity<String> entity = new HttpEntity<String>("parameters",buildHeaders());
+        HttpEntity<String> entity = new HttpEntity<String>("parameters", buildHeaders());
 
         return restTemplate.exchange(url_secured, HttpMethod.GET, entity, String.class);
     }
@@ -49,7 +49,7 @@ public class RestClientService {
 
     private HttpHeaders buildHeaders()
     {
-
+        //note:  This will request a new token with call.
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         headers.add("Authorization", "Bearer " + requestTokenService.requestToken().getAccess_token());
